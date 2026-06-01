@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>하수구 셀프 견적</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="workspace" aria-label="하수구 셀프 견적 계산기">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">INSTANT ESTIMATE</p>
+          <h1>하수구 셀프 견적</h1>
+        </div>
+        <button class="ghost-button" id="resetButton" type="button" title="처음부터 다시 선택">초기화</button>
+      </header>
+
+      <div class="progress" aria-hidden="true">
+        <span class="progress-fill" id="progressFill"></span>
+      </div>
+
+      <section class="question-panel">
+        <div class="question-copy">
+          <p class="step-label" id="stepLabel">1 / 5</p>
+          <h2 id="questionTitle">막힌 부위를 선택해주세요</h2>
+          <p id="questionHint">가장 증상이 뚜렷한 위치를 기준으로 선택하면 견적이 더 정확해집니다.</p>
+        </div>
+        <div class="option-grid" id="optionGrid"></div>
+      </section>
+
+      <aside class="estimate-panel">
+        <div class="estimate-card">
+          <p class="panel-label">예상 견적</p>
+          <strong id="totalRange">0원</strong>
+          <span id="estimateNote">선택을 시작하면 견적 범위가 표시됩니다.</span>
+        </div>
+
+        <div class="summary">
+          <p class="panel-label">선택 내역</p>
+          <ul id="summaryList">
+            <li>아직 선택된 항목이 없습니다.</li>
+          </ul>
+        </div>
+
+        <div class="actions">
+          <button class="secondary-button" id="backButton" type="button">이전</button>
+          <button class="primary-button" id="quoteButton" type="button">견적 확인</button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="result-view" id="resultView" hidden>
+      <div class="result-header">
+        <p class="eyebrow">ESTIMATE READY</p>
+        <h2>현장 방문 전 참고 견적입니다</h2>
+        <p>실제 금액은 배관 구조, 작업 공간, 이물질 상태에 따라 달라질 수 있습니다.</p>
+      </div>
+
+      <div class="result-total">
+        <span>예상 총액</span>
+        <strong id="finalTotal">0원</strong>
+      </div>
+
+      <div class="breakdown" id="breakdown"></div>
+
+      <div class="notice">
+        <strong>안내</strong>
+        <p>심한 역류, 누수, 배관 파손 의심, 야간 출동은 현장 확인 후 추가 비용이 발생할 수 있습니다.</p>
+      </div>
+
+      <div class="result-actions">
+        <button class="secondary-button" id="editButton" type="button">다시 수정</button>
+        <button class="primary-button" id="newEstimateButton" type="button">새 견적</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
